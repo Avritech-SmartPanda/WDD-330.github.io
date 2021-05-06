@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 02 Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="getDates()">
+    <nav class="main-nav">
+        <a href="../../">Home</a>
+        <a href="../../">&#8592 Main Assignment Portal</a>
+    </nav>
+
+    <div class="page">
+        <header class="page-header">
+            <div class="page-header__wrapper">
+                <div class="heading">
+                    <h1 class="heading-title">Daphne Avril - WDD 330 </h1>
+                    <div class="heading-rule">
+                        <div class="heading-rule-before"></div>
+                        <div class="heading"> Week 02 - Notes</div>
+                        <div class="heading-rule-after"></div>
+                    </div>
+                    <div class="heading-subtitle">
+                        <p>My notes on what I have learned in week 02</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading"> Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li> Javascript: Novice to Ninja (Sitepoint) book.</li>
+                        <li> Ch2: Programming basics.</li>
+                        <li> Eloquent JavaScript (EJS).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-subtitle">
+                    <p>I did not take notes on chapters 2 and 3 as it was review.</p>
+                </div>
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Chapter 04: Functions</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+
+                <div>
+                    <h4>Defining a Function</h4>
+                    <ul>
+                        <li>Defining a function literal using a function declaration:</li>
+                        <div class="code-snipet">
+                            <pre><code >function hello() {
+  console.log('Hello World!');
+}
+    </code></pre>
+                        </div>
+                        <li>Defing a function literal using a function expression (This assigns ananonymous
+                            <em>function</em> to a variable):
+                        </li>
+                        <div class="code-snipet">
+                            <pre><code >const goodbye = function(){
+            console.log('Goodbye World!');
+        };</code></pre>
+                        </div>
+                        <li>Defing a function literal using a named function expression</li>
+                        <div class="code-snipet">
+                            <pre><code >const goodbye = function bye(){
+            console.log('Goodbye World!');
+        };</code></pre>
+                        </div>
+                    </ul>
+                    <h4>Function Constructors</h4>
+                    <ul>
+                        <li>A function can also be declared using the constructor <code>Function()</code> . The body of
+                            the function is entered as a
+                            string, as shown in this example:</li>
+                        <div class="code-snipet">
+                            <pre><code >const hi = new Function('console.log("Hi World!");');</code></pre>
+                        </div>
+                        <li>It is not recomended to declare functions with the function constructor, there are too many
+                            issues when a function is put into a string. Functions created this way are also created in
+                            the global scope, regardless of where they are actually declared. This can lead to some
+                            strange and unexpected behavior.</li>
+                    </ul>
+                    <h4>Invoking a Function</h4>
+                    <ul>
+                        <li>Invoking a function tells the computer to run the code inside the functions body. It is easy
+                            to invoke a function, type its name followed by parentheses.</li>
+                        <div class="code-snipet">
+                            <pre><code >hello();</code></pre>
+                        </div>
+                        <li>If we used a function expression, we can invoke that function by putting parenthese safter
+                            the name of the variable</li>
+                        <div class="code-snipet">
+                            <pre><code >goodbye();</code></pre>
+                        </div>
+                        <li class="notice">Not including the parentheses after the name of the function/variable, will
+                            just be a reference to the function/variable, not allowing it to be invoked/executed. </li>
+                    </ul>
+                    <h4>Return Values</h4>
+                    <ul>
+                        <li>All functions will return something. If the return statement is omitted, then the function
+                            returns <code>undefined</code>. All other return statements will
+                            return the value specified.</li>
+                    </ul>
+                    <h4>Parameters and Arguments</h4>
+                    <ul>
+                        <li>Parameters and arguments are terms often used interchangeably to represent values
+                            provided for the function as an input. There is a subtle difference though: any parameters a
+                            function needs are set when the function is <em>defined</em>. When a function is
+                            <em>invoked</em>, it is provided with arguments.
+                        </li>
+                    </ul>
+                    <h4>Callbacks</h4>
+                    <ul>
+                        <li>Since functions are first class objects. This allows us to treat them like any other object
+                            and pass them into other functions. This is commanly reffered to a callback. example from
+                            book: </li>
+                        <div class="code-snipet">
+                            <pre><code >function sing(song) {
+            console.log(`I'm singing along to ${song}`);
+        }
+        sing('Gitchee Gitchee Goo')
+        'I'm singing along to Gitchee Gitchee Goo'</code></pre>
+                        </div>
+
+
+                        <li>Adding the callback parameter</li>
+                        <div class="code-snipet">
+                            <pre><code >function sing(song,callback) {
+            console.log(`I'm singing along to ${song}.`);
+            callback();
+        }</code></pre>
+                        </div>
+                        <li>Creating the callback function</li>
+                        <div class="code-snipet">
+                            <pre><code >function dance() 
+     console.log("I'm moving my body to the groove.");
+        }</code></pre>
+                        </div>
+                        <li>Invoking our function with the new callback</li>
+                        <div class="code-snipet">
+                            <pre><code >sing('Gitchee Gitchee Goo',dance);
+        'I'm singing along to Gitchee Gitchee Goo.'
+        'I'm moving my body to the groove.'</code></pre>
+                        </div>
+                        <li>Callbacks are passed into the function as a paramenter without the parentheses. The callback
+                            will be executed in the function with the parentheses, generally when some task has been
+                            executed.</li>
+                    </ul>
+                    <h4>Questions</h4>
+                    <ul>
+                        <li>
+                            <em>Callbacks are quite interesting. Is it possible to invoke as many callbacks as necessary
+                                in the same function? Can any callbacks be used inside other callbacks?</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>
