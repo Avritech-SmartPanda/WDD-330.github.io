@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>team activity 04</title>
+    <style>
+        #game {
+            display: grid;
+            grid-template: repeat(3, 100px) / repeat(3, 100px);
+            margin: 0 auto;
+            justify-content: center;
+            max-width: 302px;
+            background-color: #555;
+            gap: 1px;
+        }
+
+        .box {
+            background-color: #fff;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .box:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="game">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div id="win"></div>
+    <br>
+    <button id="reset" onclick="resetBoard()">Reset</button>
+    <script>
+        const board = document.getElementById('game');
+        board.addEventListener('click', markSquare);
+        const cells = document.querySelectorAll('.box');
+        let player = "X";
+        function markSquare() {
+            if (event.target.innerHTML == "" && player == "X") {
+                event.target.innerHTML = player;
+                return player = "O";
+
+            } else {
+                event.target.innerHTML = player;
+                return player = "X";
+            }
+        }
+
+
+        function resetBoard() {
+            cells.forEach(cell => {
+                cell.innerHTML = "";
+            });
+        }
+
+
+
+       function checkWin() {
+            if (cells[0].innerHTML == cells[1].innerHTML && cells[1].innerHTML == cells[2].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[0].innerHTML == cells[3].innerHTML && cells[0].innerHTML == cells[6].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[0].innerHTML == cells[4].innerHTML && cells[0].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[2].innerHTML == cells[4].innerHTML && cells[2].innerHTML == cells[6].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[2].innerHTML == cells[5].innerHTML && cells[2].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[6].innerHTML == cells[7].innerHTML && cells[6].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
