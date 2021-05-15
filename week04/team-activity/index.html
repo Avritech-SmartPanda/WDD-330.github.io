@@ -5,97 +5,44 @@
 <head>
     <meta charset="utf-8" />
     <title>team activity 04</title>
-    <style>
-        #game {
-            display: grid;
-            grid-template: repeat(3, 100px) / repeat(3, 100px);
-            margin: 0 auto;
-            justify-content: center;
-            max-width: 302px;
-            background-color: #555;
-            gap: 1px;
-        }
-
-        .box {
-            background-color: #fff;
-            display: grid;
-            justify-content: center;
-            align-content: center;
-        }
-
-        .box:hover {
-            background-color: aqua;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
 </head>
 
 <body>
-    <div id="game">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+    <div id="main">
+        <!-- Heading -->
+        <h1><span id="tic">TIC</span> <span id="tac">TAC</span> <span id="toe">TOE</span></h1>
+
+        <!-- Game Instructions -->
+        <p id="instructions">Game starts by just a Tap on
+            box<br><br>First Player starts as <b>Player X</b> And Second Player as <b>Player O</b>
+        </p>
+
+        <br><br>
+        <!-- 3*3 grid of Boxes -->
+        <div id="game">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <!-- Grid end here  -->
+        <br><br><br>
+
+        <!-- Button to reset game -->
+        <button id="btn" onclick="resetBoard()"> RESET </button>
+
+        <br><br>
+        <!-- Space to show player turn -->
+        <p id="print"></p>
     </div>
-    <div id="win"></div>
-    <br>
-    <button id="reset" onclick="resetBoard()">Reset</button>
-    <script>
-        const board = document.getElementById('game');
-        board.addEventListener('click', markSquare);
-        const cells = document.querySelectorAll('.box');
-        let player = "X";
-        function markSquare() {
-            if (event.target.innerHTML == "" && player == "X") {
-                event.target.innerHTML = player;
-                return player = "O";
-
-            } else {
-                event.target.innerHTML = player;
-                return player = "X";
-            }
-        }
-
-
-        function resetBoard() {
-            cells.forEach(cell => {
-                cell.innerHTML = "";
-            });
-        }
-
-
-
-       function checkWin() {
-            if (cells[0].innerHTML == cells[1].innerHTML && cells[1].innerHTML == cells[2].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-            if (cells[0].innerHTML == cells[3].innerHTML && cells[0].innerHTML == cells[6].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-            if (cells[0].innerHTML == cells[4].innerHTML && cells[0].innerHTML == cells[8].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-            if (cells[2].innerHTML == cells[4].innerHTML && cells[2].innerHTML == cells[6].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-            if (cells[2].innerHTML == cells[5].innerHTML && cells[2].innerHTML == cells[8].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-            if (cells[6].innerHTML == cells[7].innerHTML && cells[6].innerHTML == cells[8].innerHTML) {
-                document.getElementById('win').innerHTML = " You win!!!";
-            }
-
-
-
-        }
-
-
-
-    </script>
+    <script src="main.js"> </script>
 </body>
 
 </html>
