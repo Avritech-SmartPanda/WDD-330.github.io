@@ -153,8 +153,8 @@ body {
 }
 
 .page-header {
-    padding-top: 114px;
-    padding-bottom: 112px;
+    padding-top: 36px;
+    padding-bottom: 36px;
 }
 
 .page-header {
@@ -279,17 +279,14 @@ h3.subsubheading__heading {
     text-transform: lowercase;
 }
 
-/* --- End Subsubheading --- */
 
-/* --- Page Header --- */
 
 .page-header {
     border-bottom: 1px solid #EAEDF0;
 }
 
-/* --- End Page Header --- */
 
-/* --- Home Page Header --- */
+
 
 .home-page-header {
     border-bottom: 1px solid #EAEDF0;
