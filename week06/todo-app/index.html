@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    
-    rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
     <title>Challenge One: Todo</title>
 </head>
+
 <body onload="getTodos()">
+    <header class="banner">
+        <div>
+            <h2 style="margin-bottom: 30px;"> Week 06 / Challenge One: Todo</h2>
+            <ul>
+                <li><a href="../../index.html"> Home</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
     <h1>Todos</h1>
     <div class="container">
         <div class="todoList"></div>
@@ -22,10 +34,12 @@
             </div>
         </div>
         <div class="entry">
-            <input type="text" name="Todo" id="todo" placeholder="Add a task here..."><button onclick="addTodo()">+</button>
+            <input type="text" name="Todo" id="todo" placeholder="Add a task here..."><button
+                onclick="addTodo()">+</button>
         </div>
         <div id="err"></div>
     </div>
     <script src="./main.js"></script>
 </body>
+
 </html>

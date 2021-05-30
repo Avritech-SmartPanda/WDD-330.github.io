@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.banner {
+  padding: 0.2em 0;
+  background-color: #0f88f2;
+  font-family: "Lucida Console", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+.banner>div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0.3em 0;
+  padding: 0.3em;
+  background: linear-gradient( to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+}
+
+.banner h2 {
+  align-self: flex-end;
+  margin-right: 1.5em;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.banner ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.banner ul li {
+  float: left;
+}
+
+.banner ul li a {
+  display: block;
+  padding: 28px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-family:  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+footer {
+  padding: 0.6em 0;
+  background-color: #f4f4f4;
+  font-family: "Lucida Console", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: fixed;
+  font-size: 16px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #052b4c;
+}
