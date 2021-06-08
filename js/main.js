@@ -6,7 +6,7 @@ const links = [
     { label: "Week 04", url: "week04/index.html" },
     { label: "Week 05", url: "week05/index.html" },
     { label: "Week 06", url: "week06/index.html" },
-    // { label: "Week 07", url: "week07/index.html" },
+    { label: "Week 07", url: "week07/index.html" },
     // { label: "Week 08", url: "week08/index.html" },
     // { label: "Week 09", url: "week09/index.html" },
     // { label: "Week 10", url: "week10/index.html" },

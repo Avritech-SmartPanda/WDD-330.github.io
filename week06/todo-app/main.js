@@ -59,11 +59,11 @@ async function completeTask(e) {
     document.getElementById("iconFor"+e.currentTarget.myParam).innerText = "check_box";
     var entries = await getEntries();
     
-    var stutus = entries.findIndex(entry => entry.id === e.currentTarget.myParam);
-    entries[stutus].completed = true
+    var status = entries.findIndex(entry => entry.id === e.currentTarget.myParam);
+    entries[status].completed = true
 
   
-    localStorage.setItem('testC', JSON.stringify(entries));
+    localStorage.setItem('testItem', JSON.stringify(entries));
 }
 
 async function deleteTask(e) {
@@ -76,7 +76,7 @@ async function deleteTask(e) {
 
     var updatedTasks = entries.filter(entry => entry !== deleteable);
 
-    localStorage.setItem('testC', JSON.stringify(updatedTasks));
+    localStorage.setItem('testItem', JSON.stringify(updatedTasks));
 }
 
 async function saveEntry(entry) {
@@ -89,11 +89,11 @@ async function saveEntry(entry) {
     entries.push(todo);
     console.log(entries);
 
-    localStorage.setItem('testC', JSON.stringify(entries));
+    localStorage.setItem('testItem', JSON.stringify(entries));
 }
 
 async function getEntries() {
-    var entries = await JSON.parse(localStorage.getItem('testC'));
+    var entries = await JSON.parse(localStorage.getItem('testItem'));
     if (entries !== null) {
         return entries;
     } else {
