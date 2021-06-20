@@ -324,8 +324,21 @@ a:link {
     padding-bottom: 80px;
 }
 
+/* --- Footer --- */
 
+footer {
+    font-size: 14px;
+    font-family: 'Harman Simple';
+    color: #000;
+    background-color: #FFFFFF;
+    text-transform: lowercase;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding: 8px 13px 0;
+}
 
+/* --- End Footer --- */
 
 .code-snipet {
     margin: 0 auto;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body onload="getDates()">
+    <div id="top"></div>
+
+     <header class="banner">  <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2> WDD 330 / 09</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="./team-activity/index.html">Team Activity</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <div class="page">
+
+
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Javascript: Novice to Ninja (Sitepoint) book.</li>
+                        <li>Ch9: The Window Object.</li>
+                        <li>Ch14: HTML5 APIs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">The Window Object</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+
+                <div class="content">
+                    <p>
+                        Supported by all browsers and represents the browser's window. Global Javascript
+                        functions, variables
+                        and objects automatically become members of the window object. There are also window object
+                        methods.
+                    </p>
+
+                    <ul>
+                        <li>
+                            One that is commonly used is the alert() method. It displays an alert box with a message and
+                            an ok
+                            button.<em>
+                                Click <a onclick="sendAlert()" style="color: dodgerblue;cursor: pointer;">here</a> to
+                                see an example.
+                            </em>
+                        </li>
+                    </ul>
+                    <br>
+
+
+                    <pre><code >function sendAlert() { 
+   alert("This is an alert() method!"); 
+}</code></pre><br>
+
+                    <ul>
+                        <li> Another method is the scrollTo() method. This allows you to have the page take you to a
+                            specified destination on the window.<em> Click <a onclick="scrollBottom()"
+                                    style="color: dodgerblue;cursor: pointer;">here</a> to try the
+                                scrollTo() method. Here are two functions to make the scrollTo() methods work: </em>
+                        </li>
+                    </ul>
+                    <br>
+
+                    <pre>
+                        <code >function scrollBottom() { 
+   window.scrollTo(0,5000); 
+}</code>
+                        <code >function scrollBack() {
+  window.scrollTo(0,50); 
+}</code>
+                    </pre>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="./main.js"></script>
+    <script>
+        function sendAlert() {
+            alert("This is an alert() method!");
+        }
+
+        function scrollBottom() {
+            window.scrollTo(0, 5000);
+        }
+
+        function scrollBack() {
+            window.scrollTo(0, 50);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

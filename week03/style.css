@@ -54,12 +54,13 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da|Roboto');
 body {
     font-size: 17px;
     line-height: 1.6em;
     font-family: 'Century';
     color: #5D6063;
-    background-color: #FFFFFF;
+    background-color: #3c4252;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     min-width: 320px;
@@ -141,16 +142,13 @@ body {
 }
 
 .page {
-    background-color: #F9FAFB;
-    background: -webkit-linear-gradient(bottom, #F9FAFB 0%, #FFFFFF 100%);
-    background: linear-gradient(to top, #F9FAFB 0%, #FFFFFF 100%);
-    background-repeat: no-repeat;
+    background-color: #ffffff;
     position: relative;
     z-index: -100;
     overflow: hidden;
-    margin-top: 40px;
+    margin: 0 auto;
+    width: 56%;
 }
-
 .page-header {
     padding-top: 36px;
     padding-bottom: 36px;
@@ -263,7 +261,6 @@ body {
     font-size: 22px;
     line-height: 26px;
     text-transform: lowercase;
-    
 }
 
 .subsubsubheading__heading {
@@ -272,23 +269,21 @@ body {
     line-height: 26px;
     text-transform: lowercase;
 }
- h3.subsubheading__heading{
+
+h3.subsubheading__heading {
     font-size: 14px;
     line-height: 26px;
     text-transform: lowercase;
-    
 }
-/* --- End Subsubheading --- */
 
-/* --- Page Header --- */
+
 
 .page-header {
     border-bottom: 1px solid #EAEDF0;
 }
 
-/* --- End Page Header --- */
 
-/* --- Home Page Header --- */
+
 
 .home-page-header {
     border-bottom: 1px solid #EAEDF0;
@@ -306,7 +301,7 @@ body {
 }
 
 .home-page-header__description {
-    max-width: 580px;
+    max-width: 82%;
     margin: 0 auto;
 }
 
@@ -322,7 +317,7 @@ a:link {
 }
 
 .content__wrapper {
-    max-width: 580px;
+    max-width: 82%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 80px;
@@ -358,23 +353,80 @@ pre code {
     padding: 20px;
 }
 
-
 blockquote {
     background: #f9f9f9;
     border-left: 10px solid #ccc;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
     quotes: "\201C""\201D""\2018""\2019";
-  }
-  blockquote:before {
+}
+
+blockquote:before {
     color: #ccc;
     content: open-quote;
     font-size: 4em;
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
-  }
-  blockquote p {
-    display: inline;
-  }
+}
 
+blockquote p {
+    display: inline;
+}
+
+.quiz-body {
+    background: rgba(255, 255, 255, 1);
+    padding: 10px 20px 50px 20px;
+    -webkit-box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-body h1 {
+    color: cornflowerblue;
+    font-family: 'Baloo Da', cursive;
+    font-weight: 900;
+    text-align: center;
+    font-size: 48px;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+button {
+    color: #ffffff;
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    border-radius: 4px;
+    margin: 0.2em 0;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+
+
+#question {
+    font-size: 24px;
+}
+
+#result {
+    color: #fff;
+    margin: 0.2em 0;
+    width: 100%;
+    text-align: center;
+}
+
+.correct {
+    background-color: #0c0;
+}
+
+.wrong {
+    color: #fff;
+    background-color: #c00;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 6px ;
+}

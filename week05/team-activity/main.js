@@ -25,7 +25,7 @@ function renderHikeList(hikes, parent) {
 function renderOneHike(hike) {
     const item = document.createElement("li");
     item.innerHTML = `
-    <h2>${hike.name}</h2>
+    <h2 class="h2">${hike.name}</h2>
         <div class='flex-box'>
         <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
         <div class='textData'>

@@ -26,14 +26,14 @@ ul {
     padding: 0;
 }
 
-h1 {
+.h1 {
     margin: 0;
     text-align: center;
     background-color: #eee;
     padding: 1rem;
 }
 
-h2 {
+.h2 {
     text-align: center;
     background-color: bisque;
     padding: .3rem;

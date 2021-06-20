@@ -1,7 +1,7 @@
 main {
     font: 95% Arial, Helvetica, sans-serif;
     max-width: 60%;
-    margin: 80px ;
+    margin: 80px auto;
     border-radius: 28px;
     padding: 16px;
     background: #F7F7F7;

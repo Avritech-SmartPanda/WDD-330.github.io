@@ -3,20 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 07 | Landing page</title>
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-    
-    <header class="banner">
+<body onload="getDates()">
+    <div id="top"></div>
+     <header class="banner">  <h2 class="center-heading">WDD 330 - Portfolio</h2>
         <div>
-            <h2> WDD 330 / 07</span> </h2>
+            <h2> WDD 330 / 07</h2>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./notes/index.html">Notes</a></li>
+                <li  class="active"><a href="./index.html">Notes</a></li>
                 <li><a href="./team-activity/hiking-complete.html">Team Activity</a></li>
             </ul>
         </div>
     </header>
+    <div class="page">
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Ch11: Further Functions.</li>
+                        <li>Ch13: AJAX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">AJAX</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                
+                
+                <b>W3Schools says that AJAX is a developer's dream for these reasons:</b>
+                <ol>
+                    <li>It can update a web page without reloading the page</li>
+                    <li>Request data from a server - after the page has loaded</li>
+                    <li>Receive data from a server - after the page has loaded</li>
+                    <li>Send data to a server - in the background</li>
+                </ol>
+                <br>
+                <b>AJAX stands for Aynchronous JavaScript And XML and there are 7 steps to on how AJAX works:
+                </b>
+                <ol>
+                    <li>An event occurs in a web page (the page is loaded, a button is clicked)</li>
+                    <li>An XMLHttpRequest object is created by JavaScript</li>
+                    <li>The XMLHttpRequest object sends a request to a web server</li>
+                    <li>The server processes the request</li>
+                    <li>The server sends a response back to the web page</li>
+                    <li>The response is read by JavaScript</li>
+                    <li>Proper action (like page update) is performed by JavaScript</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../../js/main.js"></script>
+
 </body>
+
 </html>
