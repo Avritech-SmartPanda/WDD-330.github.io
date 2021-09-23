@@ -87,6 +87,7 @@ pre code {
   padding: 20px;
   color: #fff;
 }
+
 nav {
   font-size: 18px;
   text-transform: uppercase;
@@ -98,4 +99,5 @@ nav {
 }
 
 .banner h2 {
-  margin-bottom: 28px;}
+  margin-bottom: 28px;
+}
