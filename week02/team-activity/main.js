@@ -83,30 +83,18 @@ const onMultiply = function () {
     let value2 = document.getElementById("value2").value;
     let value3 = document.getElementById("value3").value;
     let result = Number(value2) * Number(value3);
-    const pattern = /[0-9]/g;
-    let validValue1 = value1.match(pattern);
-    let validValue2 = value2.match(pattern);
-    if (validValue1 && validValue2) {
-        let product = Number(value1) * Number(value2);
-        document.getElementById("result").innerHTML = product;
-    } else {
-        document.getElementById("result").innerHTML = "Please, input both values as numbers";
-    }
+    // const pattern = /[0-9]/g;
+    // let validValue1 = value1.match(pattern);
+    // let validValue2 = value2.match(pattern);
+    // if (validValue1 && validValue2) {
+    //     let product = Number(value1) * Number(value2);
+    //     document.getElementById("result").innerHTML = product;
+    // } else {
+    //     document.getElementById("result").innerHTML = "Please, input both values as numbers";
+    // }
 
     return result;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,6 +103,15 @@ function solve(calculate) {
     // button calls this solve function while passing the operations (onMult, onSub, onAdd)
     // and displaying the results.
     // *note This is only implemented on the onMult since it has a return.
-    const result = calculate()
-    document.getElementById("result2").innerHTML = `<p>Solved: ${result} </p>`;
+    const result = calculate();
+    const pattern = /[0-9]/g;
+    let validValue1 = value1.match(pattern);
+    let validValue2 = value2.match(pattern);
+    if (validValue1 && validValue2) {
+        // let product = Number(value1) * Number(value2);
+        document.getElementById("result").innerHTML = `<p>Solved: ${result} </p>`;
+    } else {
+        document.getElementById("result").innerHTML = "Please, input both values as numbers";
+    }
+    // document.getElementById("result2").innerHTML = `<p>Solved: ${result} </p>`;
 }

@@ -1,9 +1,9 @@
 main {
     font: 95% Arial, Helvetica, sans-serif;
-    max-width: 60%;
+    max-width: 86%;
     margin: 80px auto;
     border-radius: 28px;
-    padding: 16px;
+    padding: 24px;
     background: #F7F7F7;
 }
 
@@ -37,10 +37,22 @@ button:hover {
     border: none;
 }
 button {
-    width: 60px;
+    width:125px;
     padding: 12px;
     background: #58afef;
     border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+.icon-btn{
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    position: relative;
+    top: 5px;
+    background: #58afef;
+    border: none;
+    font-size: 30px;
     border-radius: 4px;
     color: #fff;
 }
