@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body onload="getDates()">
+    <div id="top"></div>
+    <header class="banner">
+        <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2 style="margin-bottom: 30px;"> WDD 330 / 01</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="./index.html">Notes</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page">
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading"> Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Doing Stuff with Web Things <span class="required">Required</span></li>
+                        <li>HTML5 & CSS3 for the Real World: 2nd Edition (HCRW) [SitePoint] <spanorw class="required">
+                                Required</span></li>
+                        <li>Eloquent JavaScript (EJS) <span class="required">Required</span></li>
+                        <li>Learning CSS3 Animations and Transitions</li>
+                        <li>Learning Web App Development: Build Quickly with Proven JavaScript Techniques</li>
+                    </ul>
+                </div>
+                <h4>Software and Tools</h4>
+                <div>
+                    <ul>
+                        <li>Google Chrome Web Browser</li>
+                        <li>Github Account</li>
+                        <li>Git installed on the computer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading"> Doing Stuff with Web Things</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div class="heading-subtitle">
+                    <p>Local Storage</p>
+                </div>
+                <div>
+                    <ul>
+                        <li>Information stored or shared with the user is
+                            called output. Anything coming in from where it was stored or anything
+                            the user enters is called input.</li>
+                        <li>Works in key-value pairs</li>
+                        <li>Stored locally</li>
+                        <li>Information can be used multiple times and called over multiple sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="code-snipet">
+            <pre><code >&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Story Editor&lt;/title&gt;
+    &lt;script&gt;
+        function loadStory(){
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = localStorage.getItem(storyName)
+            document.getElementById("story_editor").value = storyHTML
+        }
+        function saveStory(){
+            var storyName = document.getElementById("name_input").value
+            var storyHTML = document.getElementById("story_editor").value
+            localStorage.setItem(storyName,storyHTML)
+        }
+        function displayStory(){
+            var storyHTML = document.getElementById("story_editor").value
+            document.getElementById("story_display").innerHTML = storyHTML
+        }
+    &lt;/script&gt;
+                
+    &lt;style&gt;
+        textarea{
+            width:800px;
+            height: 250px;
+            background-color: lightyellow;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+                
+&lt;body&gt;
+    &lt;h1&gt;Story Editor&lt;/h1&gt;
+    Story Name: &lt;input id=name_input&gt;&lt;/input&gt;
+    &lt;section&gt;
+        &lt;button onclick="loadStory()"&gt;Find and Edit It&lt;/button&gt;
+        &lt;button onclick="saveStory()"&gt;Save It&lt;/button&gt;
+        &lt;button onclick="displayStory()"&gt;Display It&lt;/button&gt;
+    &lt;/section&gt;
+    &lt;textarea id="story_editor" placeholder="Write a totally awesome story here."&gt;&lt;/textarea&gt;
+    &lt;section id="story_display"&gt;&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <hr>
+
+
+
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Master Mobile UX</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div class="heading-subtitle">
+                    <p>How to Rewire Your Brain for Mobile First UX</p>
+                </div>
+                <div>
+                    <blockquote>"If you design for the smallest, least powerfull device first, then you will
+                        focus on
+                        your
+                        conntent, and your core functionality. That leads to simple, beautiful apps. If you do
+                        it the
+                        other
+                        way
+                        around, it'll be like trying to put a marshmallow into a piggy bank, which is either
+                        simple, nor
+                        beautiful." Joel Marsh - The Hipper Element</blockquote>
+
+                    <ul>
+                        <li>More and more consumers have a mobile device. Everything we build, the application
+                            needs to
+                            be
+                            viewed accross all devices.</li>
+                        <li>We have been making websites and applications for larger screens.</li>
+                        <li>Consumers will have 3-5 devices, meaning multiple devices per houshold</li>
+                    </ul>
+                    <blockquote>"The simple guideline is whatever you are doing - do mobile first" - Eric
+                        Schmidt, World
+                        Mobile
+                        Congress Keynote 2012</blockquote>
+                    <ul>
+                        <li>Responsive != Mobile First</li>
+                        <li>Responsive Retrofitting</li>
+                        <ul>
+                            <li>Cheaper and faster than a group rewrite</li>
+                            <li>Better mobile experience than a desktop only site</li>
+                            <li>Doesn't address screen real estate issues</li>
+                            <li>Doesn't address touch interaction issues</li>
+                        </ul>
+
+                        <li>Mobile First</li>
+                        <ul>
+                            <li>Time consuming and costly for a full rebuild</li>
+                            <li>Proviedes best experience accross many devices</li>
+                            <li>Address constraints of mobile size/bandwidth</li>
+                            <li>Future friendly and ready for growth</li>
+                        </ul>
+                        <li>Things to Remember</li>
+                        <ul>
+                            <li>Desktop computer sales are way down, mobile devices are in much more demand.
+                            </li>
+                            <li>Start small and scale up.</li>
+                            <li>Mobile is not going away.</li>
+                        </ul>
+
+
+
+                        <li>Build Mobile first!!</li>
+                        <li>Expand from the mobile, it will make it easier</li>
+                        <li>Try to simplify the process</li>
+
+                        <li>Minify CSS and JS files</li>
+
+                        <li>Make forms show only the data that they are willing to provide ie email or phone
+                            number
+                            based on
+                            checkboxes</li>
+                        <li>Use number pad for certain fields</li>
+                        <li>Use anchor tags to be able to have users click to call.</li>
+                        <li>Stop using pop-ups</li>
+                        <li>Make it sleek and focus on content first</li>
+                    </ul>
+                </div>
+
+
+                <div class="subsubheading content__subsubheading">
+                    <h3 class="subsubheading__heading">How to Improve UX by Understanding Users</h3>
+                </div>
+
+                <div>
+                    <blockquote>"It's really hard to design products by focus groups. A lot of times, people
+                        don't know
+                        what
+                        they want until you show it to them." Steve Jobs - Apple</blockquote>
+                    <ul>
+                        <li>Be There!</li>
+                        <li>Be Useful! Only 9% of users will stay if it doesn't satisfy their needs</li>
+                        <li>Be Quick! It's not about fast loading, the functionality must be there as well.</li>
+                        <li>Reachability matters</li>
+                        <li>Speed Matters</li>
+                        <li>Networks Matter</li>
+                        <li>Reduce image usage throught sites/apps</li>
+                        <li>SVG/Webfonts are lower bandwidth</li>
+                        <li>Optimize and Minify CSS and JS files</li>
+                        <li>GZIP files to eliminate unnecessary data</li>
+                    </ul>
+                </div>
+
+                <div class="subsubheading content__subsubheading">
+                    <h3 class="subsubheading__heading">Better Mobile UX with Strategic Menu Design</h3>
+                </div>
+
+                <div>
+                    <blockquote>"The trouble with software is... it sucks. that's nt a nice thing to say.. but
+                        it is a
+                        fundamental truth. Software customers -- you, me, CIOs of multibillion-dolaar
+                        companies...have
+                        learned to live with mediocre software. We do not count on software to be intuitively
+                        easy to
+                        understand or to work consistently. Instead, we make do." Stewart Aslop - Venture
+                        Capitalist
+                    </blockquote>
+                    <ul>
+                        <li>Navbars at the bottom of the screen are easier to use than ones on the time. Keep it
+                            simple
+                            and
+                            fluid.</li>
+                        <ul>
+                            <li>Address reachability issues</li>
+                            <li>Created perception of speed</li>
+                            <li>Improved engagement rates</li>
+                            <li>Increased user satisfaction</li>
+                        </ul>
+                        <li>Many users don't know what a hamburger menue is.</li>
+                    </ul>
+                </div>
+                <h4></h4>
+
+
+                <div class="subsubheading content__subsubheading">
+                    <h3 class="subsubheading__heading">Designing Intuitive and Mobile Friendly Form</h3>
+                </div>
+                <div>
+                    <blockquote>"[The constraints of Mobile] push you toward more focused, simplifies solutions.
+                        You can
+                        only fit so much on the screen, people often have to wait for it, and they're unlikely
+                        to give
+                        you
+                        their full attention. So make it easy to understand and use focus on the important
+                        things first.
+                        Mobile is a great forcing function for simplicity." Luke Wroblewski - Co-Founder of
+                        Polar and
+                        Bagcheck</blockquote>
+                    <ul>
+                        <li>The big problem with forms these days is the ammount of information required of the
+                            user.
+                        </li>
+                        <li>Have input lables displayed in the input field.</li>
+                        <li>Use float lables.</li>
+                        <li>Get rid of unnecessary fields.</li>
+                        <li>If you need a form with more information, use pagination. Also include a progress
+                            bar so the
+                            user knows how long it will be.</li>
+                        <li>Use Autocomplete on your forms.</li>
+                    </ul>
+                    <blockquote>"Typically, masking passwords doesn't even increae security, but it does cost
+                        you
+                        business
+                        due to login failures." - Nielsen Norman Group</blockquote>
+                    <ul>
+                        <li>Auto advancing when entering credit card information helps the user reduce errors.
+                        </li>
+                        <li>Provide users the best keyboard for the information they are entering.</li>
+                        <li>Make phone numbers calable from your website.</li>
+                    </ul>
+                </div>
+
+                <div class="subsubheading content__subsubheading">
+                    <h3 class="subsubheading__heading">Designing a Better Mobile Advertising User Experience</h3>
+                </div>
+
+
+                <div>
+                    <blockquote>"End-users, not technologies, shape the market. Consequently marketers need to
+                        stay
+                        abreast
+                        not only of technological developments but also of the way people respond to them. Matt
+                        Haig -
+                        Author"</blockquote>
+
+                    <ul>
+                        <li>There is so much advertising that when mobile came around, there was not enough real
+                            estate
+                            for
+                            content.</li>
+                        <li>More spending is taking place for mobile advertising.</li>
+                        <li>No one likes a pop up!</li>
+                        <li>Make advertising less intrusive.</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

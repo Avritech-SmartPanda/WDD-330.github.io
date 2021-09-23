@@ -1,0 +1,419 @@
+@font-face {
+    font-family: 'RysLatinModernMono';
+    src: url('/fonts/RysLatinModernMono.eot');
+    src: url('/fonts/RysLatinModernMono.eot?#iefix') format('embedded-opentype'), url('/fonts/RysLatinModernMono.woff') format('woff'), url('/fonts/RysLatinModernMono.ttf') format('truetype'), url('/fonts/RysLatinModernMono.svg#RysLatinModernMono') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century';
+    src: url('/fonts/CenturySchoolbook-Bold-webfont.eot');
+    src: url('/fonts/CenturySchoolbook-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/CenturySchoolbook-Bold-webfont.woff2') format('woff2'), url('/fonts/CenturySchoolbook-Bold-webfont.woff') format('woff'), url('/fonts/CenturySchoolbook-Bold-webfont.ttf') format('truetype'), url('/fonts/CenturySchoolbook-Bold-webfont.svg#century_schoolbook_fsbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century';
+    src: url('/fonts/CenturySchoolbook-Italic-webfont.eot');
+    src: url('/fonts/CenturySchoolbook-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/CenturySchoolbook-Italic-webfont.woff2') format('woff2'), url('/fonts/CenturySchoolbook-Italic-webfont.woff') format('woff'), url('/fonts/CenturySchoolbook-Italic-webfont.ttf') format('truetype'), url('/fonts/CenturySchoolbook-Italic-webfont.svg#century_schoolbook_fsitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Century';
+    src: url('/fonts/CenturySchoolbook-Regular-webfont.eot');
+    src: url('/fonts/CenturySchoolbook-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/CenturySchoolbook-Regular-webfont.woff2') format('woff2'), url('/fonts/CenturySchoolbook-Regular-webfont.woff') format('woff'), url('/fonts/CenturySchoolbook-Regular-webfont.ttf') format('truetype'), url('/fonts/CenturySchoolbook-Regular-webfont.svg#century_schoolbook_fsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harman Retro';
+    src: url('/fonts/Harman-Retro-webfont.eot');
+    src: url('/fonts/Harman-Retro-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/Harman-Retro-webfont.woff2') format('woff2'), url('/fonts/Harman-Retro-webfont.woff') format('woff'), url('/fonts/Harman-Retro-webfont.ttf') format('truetype'), url('/fonts/Harman-Retro-webfont.svg#harmanretro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harman Simple';
+    src: url('/fonts/Harman-Simple-webfont.eot');
+    src: url('/fonts/Harman-Simple-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/Harman-Simple-webfont.woff2') format('woff2'), url('/fonts/Harman-Simple-webfont.woff') format('woff'), url('/fonts/Harman-Simple-webfont.ttf') format('truetype'), url('/fonts/Harman-Simple-webfont.svg#harmansimple') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harman Sans';
+    src: url('/fonts/Harman-Sans-webfont.eot');
+    src: url('/fonts/Harman-Sans-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/Harman-Sans-webfont.woff2') format('woff2'), url('/fonts/Harman-Sans-webfont.woff') format('woff'), url('/fonts/Harman-Sans-webfont.ttf') format('truetype'), url('/fonts/Harman-Sans-webfont.svg#harmansans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da|Roboto');
+body {
+    font-size: 17px;
+    line-height: 1.6em;
+    font-family: 'Century';
+    color: #5D6063;
+    background-color: #3c4252;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-nav {
+    font-size: 14px;
+    line-height: 26px;
+    font-family: 'Harman Simple';
+    color: #5D6063;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 0 rgba(93, 96, 99, .1);
+    /*border-bottom: $border;*/
+    width: 100%;
+    height: 40px;
+    padding: 0 13px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.main-nav__branding {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.main-nav__logo {
+    width: 30px;
+    /* Need this for iOS 10 rendering bug */
+    height: 24px;
+    margin-right: 13px;
+    position: relative;
+    top: 3px;
+}
+
+.main-nav__logo-link:visited:hover, .main-nav__logo-link:hover {
+    border-bottom: none;
+}
+
+.main-nav__name {
+    position: relative;
+    top: 1px;
+}
+
+.main-nav__html-css {
+    position: relative;
+    top: 1px;
+}
+
+.page {
+    background-color: #ffffff;
+    position: relative;
+    z-index: -100;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 56%;
+}
+.page-header {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.page-header {
+    border-bottom: 1px solid #EAEDF0;
+}
+
+.page-header__wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* --- Heading --- */
+
+.heading-title {
+    font-family: 'Harman Retro';
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.heading {
+    font-family: 'Harman Simple';
+    font-weight: normal;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+.heading-rule {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.heading-rule-after {
+    border-top: 1px solid #959BA0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    top: 10px;
+    margin-left: 12px;
+}
+
+.heading-rule-before {
+    border-top: 1px solid #959BA0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    top: 10px;
+    margin-right: 12px;
+}
+
+.heading-subtitle {
+    font-family: 'Century';
+    font-style: italic;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+}
+
+/* --- End Heading --- */
+
+/* --- Subheading --- */
+
+.subheading {
+    text-align: center;
+}
+
+.subheading__heading {
+    font-family: 'Harman Retro';
+    font-size: 31px;
+    line-height: 41px;
+    font-weight: 100;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.subheading__heading span {
+    background-color: #FFFFFF;
+    box-shadow: 11px 0 0 #FFFFFF, -13px 0 0 #FFFFFF;
+}
+
+.subheading__heading:after {
+    content: '';
+    border-top: 1px solid #959BA0;
+    height: 1px;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: -21px;
+    z-index: -1;
+}
+
+.subheading__desktop-title-br {
+    display: none;
+}
+
+.subsubheading__heading {
+    font-family: 'Harman Sans';
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: lowercase;
+}
+
+.subsubsubheading__heading {
+    font-family: 'Harman Sans';
+    font-size: 17px;
+    line-height: 26px;
+    text-transform: lowercase;
+}
+
+h3.subsubheading__heading {
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: lowercase;
+}
+
+
+
+.page-header {
+    border-bottom: 1px solid #EAEDF0;
+}
+
+
+
+
+.home-page-header {
+    border-bottom: 1px solid #EAEDF0;
+}
+
+.home-page-header__logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.home-page-header__tutorial-icon {
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+.home-page-header__description {
+    max-width: 82%;
+    margin: 0 auto;
+}
+
+/* --- End Home Page Header --- */
+
+a:link {
+    color: #5995DA;
+    text-decoration: none;
+}
+
+.content {
+    border-bottom: 1px solid #EAEDF0;
+}
+
+.content__wrapper {
+    max-width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+
+
+.code-snipet {
+    margin: 0 auto;
+    padding: 67px;
+    font-size: 12px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+.quiz-body {
+    background: rgba(255, 255, 255, 1);
+    padding: 10px 20px 50px 20px;
+    -webkit-box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 11px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-body h1 {
+    color: cornflowerblue;
+    font-family: 'Baloo Da', cursive;
+    font-weight: 900;
+    text-align: center;
+    font-size: 48px;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+button {
+    color: #ffffff;
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    border-radius: 4px;
+    margin: 0.2em 0;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+
+
+#question {
+    font-size: 24px;
+}
+
+#result {
+    color: #fff;
+    margin: 0.2em 0;
+    width: 100%;
+    text-align: center;
+}
+
+.correct {
+    background-color: #0c0;
+}
+
+.wrong {
+    color: #fff;
+    background-color: #c00;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 6px ;
+}
