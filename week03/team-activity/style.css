@@ -1,0 +1,21 @@
+body {
+    background-color: #3c4252;
+}
+
+
+.cardio{   
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    width:56%;
+    margin: 0 auto;
+    padding:20px 40px;
+  }
+    pre {
+      width: 98%;
+    }
+
+
+    hr {
+      border-top: 1px solid #eeeeee;
+    }

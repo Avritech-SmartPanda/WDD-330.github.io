@@ -83,6 +83,7 @@ footer {
 
 pre code {
   background-color: #3c4252;
+  border-radius: 4px;
   display: block;
   padding: 20px;
   color: #fff;
