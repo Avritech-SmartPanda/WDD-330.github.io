@@ -1,0 +1,76 @@
+/* Main Contianer */
+
+#main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 900;
+    font-family: 'Nerko One', cursive;
+}
+
+#tic {
+    color: green;
+}
+
+#tac {
+    color: orangered;
+}
+
+#toe {
+    color: #1b2c00;
+}
+
+/* Game Instruction Text */
+
+#instructions {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: dodgerblue;
+    font-size: 17px;
+}
+
+#game {
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 302px;
+    background-color: #555;
+    gap: 1px;
+}
+
+.box {
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: 48px;
+}
+
+.box:hover {
+    background-color: aqua;
+}
+
+/* Reset Button */
+
+#btn {
+    box-sizing: border-box;
+    width: 95px;
+    height: 40px;
+    border: 1px solid dodgerblue;
+    margin: auto;
+    border-radius: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Player turn space */
+#print {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: dodgerblue;
+    font-size: 20px;
+}
