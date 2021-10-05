@@ -37,7 +37,7 @@ function resetBoard() {
 function restart() {
     setTimeout(() => {
         resetBoard()
-    }, 4000);
+    }, 1000);
 };
 
 // Function called whenever user tab on any box
