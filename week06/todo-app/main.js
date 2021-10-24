@@ -194,8 +194,8 @@ function getCompletedTodos() {
 
 
 function showError() {
-    document.getElementById('err').innerText = "You need to enter some text first!"
-    setTimeout(function () { document.getElementById('err').innerText = '' }, 3000);
+    document.getElementById('err').innerHTML = "You need to enter some text first!"
+    setTimeout(()=> { document.getElementById('err').innerHTML = '' }, 3000);
 }
 
 
