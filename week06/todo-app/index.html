@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+</head>
+
+<body onload="getAllTodos()">
+    <div id="top"></div>
+
+    <header class="banner">
+        <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2> WDD 330 / 06 / Challenge One: Todo</h2>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">Notes</a></li>
+                <li class="active"><a href="./index.html">Todo App</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <h1 style="color: aliceblue;">Todos</h1>
+    <div class="container">
+        <div id="todos"></div>
+        <div class="footer">
+            <div class="progress"></div>
+            <div class="btns">
+                <button class="filters active" id="all" onclick="getAllTodos()">All.</button>
+                <button class="filters" id="active" onclick="getActiveTodos()">Active.</button>
+                <button class="filters" id="complete" onclick="getCompletedTodos()">Completed</button>
+            </div>
+        </div>
+        <form class="entry">
+            <input type="text" name="Todo" id="todo" placeholder="Add a task here..."><button
+                onclick="addTodo()">+</button>
+        </form>
+        <div id="err"></div>
+
+
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

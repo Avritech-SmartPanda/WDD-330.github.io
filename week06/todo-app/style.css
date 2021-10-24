@@ -1,0 +1,127 @@
+html {
+  font-family: 'Varela Round', sans-serif;
+  background-color: #3c4252;
+}
+
+h1 {
+  text-align: center;
+  color: #777777;
+}
+.container {
+  width: 65%;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.todos {
+  width: 98%;
+}
+
+.entry {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry input {
+  width: 100%;
+  font-size: 16px;
+  padding-left: 12px;
+}
+
+.entry button {
+  width: 52px;
+  height: 52px;
+  font-size: 44px;
+  color: black;
+  border: solid 1px rgb(118, 118, 118);
+  border-left:none;
+}
+
+.square {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #555;
+}
+
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97.4%;
+  padding: 7px;
+  border-bottom: 1px solid rgb(118, 118, 118);
+  border-left: 1px solid rgb(118, 118, 118);
+  border-right: 1px solid rgb(118, 118, 118);
+}
+.todoItem:first-child { 
+  border: solid 1px rgb(118, 118, 118);
+}
+.todoItem:last-child {
+  border-bottom: none;
+}
+
+button.filters {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+  justify-content: space-between;
+  border: 1px solid rgb(118, 118, 118);
+  width: 96.4%;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.completed {
+  color: green;
+}
+.completed>.task {
+  text-decoration: line-through;
+}
+.material-icons {
+  font-weight: 100;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.task {
+  position: absolute;
+  left: 20%;
+  margin-top: 2px;
+}
+
+div#err {
+  color: red;
+  font-size: 12px;
+  padding: 12px 0 0 0;
+}
+.close {
+  color: red;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.active {
+  color: #15b3f1;
+}
