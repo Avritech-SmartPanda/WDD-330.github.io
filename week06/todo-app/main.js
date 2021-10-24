@@ -117,6 +117,7 @@ function completeTask(e) {
     var status = entries.findIndex(entry => entry.id === e.currentTarget.myParam);
     entries[status].completed = true;
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(entries));
+    getAllTodos()
 }
 
 function deleteTask(e) {
@@ -128,6 +129,7 @@ function deleteTask(e) {
         }
     }
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(entries));
+    getAllTodos()
 }
 
 
