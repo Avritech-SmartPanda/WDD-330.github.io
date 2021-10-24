@@ -17,10 +17,11 @@ const addTodo = () => {
     var todo = document.getElementById("todo").value;
     if (todo !== '' && todo !== null) {
         saveEntry(todo);
+        document.getElementById("todo").value = '';
     } else {
         showError();
     }
-    document.getElementById("todo").value = '';
+    
 }
 
 
