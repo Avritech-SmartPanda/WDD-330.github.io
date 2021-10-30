@@ -17,10 +17,10 @@ const addTodo = () => {
     var todo = document.getElementById("todo").value;
     if (todo !== '' && todo !== null) {
         saveEntry(todo);
+        document.getElementById("todo").value = ''
     } else {
         showError();
     }
-    document.getElementById("todo").value = '';
 }
 
 
@@ -117,6 +117,7 @@ function completeTask(e) {
     var status = entries.findIndex(entry => entry.id === e.currentTarget.myParam);
     entries[status].completed = true;
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(entries));
+    getAllTodos()
 }
 
 function deleteTask(e) {
@@ -128,6 +129,7 @@ function deleteTask(e) {
         }
     }
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(entries));
+    getAllTodos()
 }
 
 
@@ -192,8 +194,10 @@ function getCompletedTodos() {
 
 
 function showError() {
-    document.getElementById('err').innerText = "You need to enter some text first!"
-    setTimeout(function () { document.getElementById('err').innerText = '' }, 3000);
+    document.getElementById('err').innerHTML = "You need to enter some text first!"
+    setTimeout(() => {
+        document.getElementById('err').innerHTML = ''
+    }, 3000);
 }
 
 
