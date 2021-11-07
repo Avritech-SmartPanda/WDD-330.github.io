@@ -10,8 +10,7 @@ export default class CharactersList {
     this.key = elementId;
     this.parentElement = document.getElementById(elementId);
     this.url = `${baseUrl}${this.category}/?page=`;
-    this.backButton = this.buildBackButton();
-    
+    this.backButton = this.buildBackButton();    
   }
 
 
@@ -45,7 +44,7 @@ export default class CharactersList {
     list.forEach(el => {
       this.parentElement.appendChild(renderOneItem(el));
     });
-   
+    this.backButton.classList.add('hide');
     this.addListListeners();
   }
 
@@ -53,7 +52,8 @@ export default class CharactersList {
   showOneItem(itemName) {
     const item = list.find(item => item.name === itemName);
     this.parentElement.innerHTML = '';
-    this.parentElement.appendChild(renderOneFullItem(item));
+    this.parentElement.appendChild(renderOneFullItem(item));   
+    this.backButton.classList.remove('hide');
   }
 
   addListListeners() {
@@ -77,6 +77,7 @@ export default class CharactersList {
   buildBackButton() {
     const backButton = document.createElement("button");
     backButton.textContent = "Return to List";
+    backButton.setAttribute('class', 'backBtn');
     backButton.addEventListener('click', () => { this.showList() });
     this.parentElement.before(backButton);
     return backButton;

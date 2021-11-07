@@ -4,26 +4,25 @@ main {
     border-radius: 8px;
     padding: 24px;
     background: #000;
-    background:radial-gradient(#050526 40%,black 98%) ;
+    background: radial-gradient(#050526 40%, black 98%);
     color: #fff;
 }
 
 main h2 {
     background: #58afef;
-    
     border-radius: 4px;
     padding: 10px 0 10px 10px;
     font-size: 140%;
     font-weight: 300;
     text-align: center;
     color: #fff;
-
 }
- input[type="text"] {
+
+input[type="text"] {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    width:40%;
+    width: 40%;
     background: #fff;
     margin-bottom: 4%;
     border: 1px solid #ccc;
@@ -33,27 +32,26 @@ main h2 {
     font: 95% Arial, Helvetica, sans-serif;
 }
 
-
-
 button {
-    width:125px;
+    width: 125px;
     padding: 12px;
-    background: #f2f200;
-    border: none;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
     border-radius: 4px;
-    color: #000;
+    color: #fff;
 }
-
 
 button:hover {
     background: #3c4252;
     border: none;
 }
+
 div#result {
     font-size: 32px;
 }
 
-.paginator{
+.paginator {
     display: flex;
     justify-content: space-between;
 }
@@ -67,41 +65,39 @@ div.flex-container {
     flex-direction: row;
 }
 
-ul#starwars li{
-   border-bottom:#ccc 1px dashed;
-   padding: 12px 0;
+ul#starwars li {
+    border-bottom: #ccc 1px dashed;
+    padding: 12px 0;
 }
 
 h1 {
     font-family: 'Star Jedi', arial;
     font-size: 38px;
     color: #f2f200;
-    text-align:center;
+    text-align: center;
     text-shadow: 1px 1px 3px #000;
-    
 }
 
-
-#films{
+#films {
     display: flex;
     justify-content: space-between;
 }
 
-
-.filmCard{
+.filmCard {
     margin: 5px;
     padding: 1em;
     border: 2px solid white;
     border-radius: 4px;
 }
-.personCard{
+
+.personCard {
     margin: 0 5px;
     padding: 1em;
     border: 1px dashed white;
     cursor: pointer;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -118,32 +114,62 @@ h3 {
 .paginator {
     display: flex;
     justify-content: space-between;
-  }
+    padding: 0;
+    margin: 20px 45px;
+}
 
-  a {
+a {
     padding: 1rem;
     font-size: 1.3em;
     font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
-  }
+}
 
-
-  .pagination {
+.pagination {
     display: inline-block;
-  }
-  
-  .pagination a {
+}
+
+.pagination a {
     /* color: black; */
     /* float: left; */
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
-  }
-  
-  .pagination a.active {
+}
+
+.pagination a.active {
     background-color: #4CAF50;
     color: white;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ccc;}
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ccc;
+}
+
+.backBtn {
+    margin-left: 42px;
+    margin-bottom: 20px;
+    background: transparent;
+    color: yellow;
+    border: 1px solid;
+    
+}
+
+ul#list {
+    margin-top: 10px;
+}
+
+button#next {
+    position: relative;
+    right: -40px
+}
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    div#pagination {
+        display: none;
+    }
+}
