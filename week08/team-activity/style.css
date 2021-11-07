@@ -78,12 +78,22 @@ h1 {
     text-shadow: 1px 1px 3px #000;
 }
 
-#films {
+#films,#vehicles {
     display: flex;
     justify-content: space-between;
 }
+#films .card {
+    min-height: 420px;
+}
+#starships,#vehicles{
+    display: flex;
+}
+#starships .card{
+    width: 250px;
+    height: 250px;
+}
 
-.filmCard {
+.card {
     margin: 5px;
     padding: 1em;
     border: 2px solid white;
@@ -131,20 +141,22 @@ a {
 }
 
 .pagination a {
-    /* color: black; */
-    /* float: left; */
+    margin: 0 8px;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
+    border: 1px solid #f2f200;
+    color: #f2f200;
+    border-radius: 4px;
 }
 
 .pagination a:hover:not(.active) {
-    background-color: #ccc;
+    border: 1px solid #f2f200;
+    color: #f2f200;
+    border-radius: 4px;
 }
 
 .backBtn {
@@ -153,7 +165,6 @@ a {
     background: transparent;
     color: yellow;
     border: 1px solid;
-    
 }
 
 ul#list {
@@ -164,6 +175,7 @@ button#next {
     position: relative;
     right: -40px
 }
+
 .hide {
     display: none;
 }

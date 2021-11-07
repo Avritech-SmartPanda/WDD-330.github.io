@@ -1,58 +1,56 @@
 const baseUrl = "https://swapi.dev/api/";
-let list;
-let page = 1;
-let categories = ['planets', 'people', 'starships', 'vehicles', 'species', 'films'];
 let films = [];
+let starships = [];
+let vehicles = [];
+let planets = [];
 
 export default class CharactersList {
   constructor(elementId) {
-    this.category = categories[1];
+    this.category = 'people';
     this.key = elementId;
+    this.page = 1;
+    this.list = [];
     this.parentElement = document.getElementById(elementId);
     this.url = `${baseUrl}${this.category}/?page=`;
-    this.backButton = this.buildBackButton();    
+    this.backButton = this.buildBackButton();
+    this.prevButton = document.getElementById("prev");
+    this.nextButton = document.getElementById("next");
   }
-
-
-  getData(data) {
-    // return  
-    localStorage.setItem(this.key, JSON.stringify(data));
-    list = [];
-    data.results.forEach(el => {
-      list.push(NewItem(el));
-    });
-    this.showList();
-    
-  }
-
-
-
-
-
   fetchData() {
-    fetch(`${this.url}${page}`)
+    fetch(`${this.url}${this.page}`)
       .then(res => res.json())
       .then(data => {
         this.getData(data)
       });
   }
+
+  getData(data) {
+    localStorage.setItem(this.key, JSON.stringify(data));
+    data.results.forEach(el => {
+      this.list.push(el);
+    });
+    this.routeToPage(data);
+    console.log(data);
+    this.showList();
+  }
+
   showList() {
     const data = JSON.parse(localStorage.getItem(this.key));
     // clear our parent element.
     this.parentElement.innerHTML = '';
     // fill the parent element with the new list.
-    list.forEach(el => {
+    this.list.forEach(el => {
       this.parentElement.appendChild(renderOneItem(el));
     });
     this.backButton.classList.add('hide');
     this.addListListeners();
+
   }
 
-
   showOneItem(itemName) {
-    const item = list.find(item => item.name === itemName);
+    const item = this.list.find(item => item.name === itemName);
     this.parentElement.innerHTML = '';
-    this.parentElement.appendChild(renderOneFullItem(item));   
+    this.parentElement.appendChild(renderOneFullItem(item));
     this.backButton.classList.remove('hide');
   }
 
@@ -67,12 +65,32 @@ export default class CharactersList {
     const pages = Array.from(paginator.children);
     pages.forEach(el => {
       el.addEventListener('click', () => {
-        page = el.id
+        this.page = el.id;
+        document.querySelectorAll('.active').forEach(e => e.classList.remove('active'));
+        document.getElementById(el.id).classList.add('active');
         this.fetchData();
       });
     })
   }
 
+  routeToPage(data) {
+    //Do not display next button if this is the first page; otherwise add an event listener to it.
+    if (data.previous == null) {
+      this.prevButton.classList.add('hide')
+    } else {
+      this.prevButton.classList.remove('hide')
+      this.prevButton.onclick = () => this.getPrevious();
+    }
+
+    //Do not display next button if this is the last page; otherwise add an event listener to it.
+    if (data.next == null) {
+      this.nextButton.classList.add('hide');
+    } else {
+      this.nextButton.classList.remove('hide');
+      this.nextButton.onclick = () => this.getNext();
+      
+    }
+  }
 
   buildBackButton() {
     const backButton = document.createElement("button");
@@ -83,25 +101,32 @@ export default class CharactersList {
     return backButton;
   }
 
+  // Getting the previous page's results
+  getPrevious() {
+    this.page = this.page - 1;
+    this.fetchData();
+  }
 
- 
-
+  // Getting the next page's results
+  getNext() {
+    this.page = this.page + 1;
+    this.fetchData();
+  }
 }
 
 
 function buildPagination() {
   let paginator = document.getElementById("pagination");
   for (let i = 1; i < 10; i++) {
-    page = i;
-    
     let link = document.createElement("a");
-    link.setAttribute('id',i)
-    link.innerHTML = page;
+    link.setAttribute('id', i)
+    link.innerHTML = i;
     paginator.appendChild(link);
   }
-
 };
-buildPagination()
+
+
+
 
 function renderOneItem(person) {
   const li = document.createElement('li');
@@ -112,6 +137,9 @@ function renderOneItem(person) {
 function renderOneFullItem(item) {
   for (let i = 0; i < item.films.length; i++) {
     getFilms(item.films[i])
+  }
+  for (let i = 0; i < item.starships.length; i++) {
+    getShips(item.starships[i])
   }
   const li = document.createElement('li');
   li.innerHTML = `
@@ -147,11 +175,21 @@ function getFilms(url) {
     .then(data => {
       localStorage.setItem('movies', JSON.stringify(data));
       const movie = JSON.parse(localStorage.getItem('movies'));
-      films.push(Film(movie));
+      films.push(movie);
       const parent = document.getElementById('films');
       parent.appendChild(renderMovie(movie));
     })
-    .catch(error => console.log('some error happen', error));
+}
+function getShips(url) {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      localStorage.setItem('starships', JSON.stringify(data));
+      const ship = JSON.parse(localStorage.getItem('starships'));
+      starships.push(ship);
+      const parent = document.getElementById('starships');
+      parent.appendChild(renderShip(ship));
+    })
 }
 
 
@@ -161,15 +199,27 @@ function getFilms(url) {
 function renderMovie(item) {
   const li = document.createElement('li');
   li.innerHTML = `
-<div class="filmCard"> 
+<div class="card"> 
 <h4>${item.title}</h4>
 <p> Episode ${item.episode_id}</p>
 <!--<p> Director: ${item.director}</p>
 <p> Producer: ${item.producer}</p>-->
 <p> Release Date: ${item.release_date}</p>
-<!-- <p> Edited: ${item.edited}</p>
- <p> Created: ${item.created}</p>-->
 <p>  ${item.opening_crawl}</p>
+</div> 
+`
+  return li;
+}
+function renderShip(ship) {
+  const li = document.createElement('li');
+  li.innerHTML = `
+<div class="card"> 
+<h4>${ship.name} - ${ship.starship_class}</h4>
+<p> Model: ${ship.model}</p>
+<p> MGLT: ${ship.MGLT}</p>
+<p> Cargo Capacity: ${ship.cargo_capacity}</p>
+<p> Consumables: ${ship.consumables}</p>
+<p> Passengers: ${ship.passengers}</p>
 </div> 
 `
   return li;
@@ -185,41 +235,6 @@ function renderMovie(item) {
 
 
 
-function NewItem(item) {
-  const newItem = {
-    name: item.name,
-    height: item.height,
-    mass: item.mass,
-    hair_color: item.hair_color,
-    skin_color: item.skin_color,
-    eye_color: item.eye_color,
-    gender: item.gender,
-    species: item.species,
-    birth_year: item.birth_year,
-    films: item.films,
-    homeworld: item.homeworld,
-    created: item.created,
-    edited: item.edited,
-    starships: item.starships,
-    vehicles: item.vehicles
-  }
-  return newItem;
-}
-
-
-function Film(film) {
-  const newFilm = {
-    created: film.created,
-    director: film.director,
-    edited: film.edited,
-    episode_id: film.episode_id,
-    opening_crawl: film.opening_crawl,
-    producer: film.producer,
-    release_date: film.release_date,
-    title: film.title
-  }
-  return newFilm;
-}
 
 
 
@@ -229,4 +244,4 @@ function Film(film) {
 
 
 
-
+buildPagination();
