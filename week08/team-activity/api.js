@@ -3,6 +3,7 @@ let films = [];
 let starships = [];
 let vehicles = [];
 let planets = [];
+let species = [];
 
 export default class CharactersList {
   constructor(elementId) {
@@ -125,9 +126,6 @@ function buildPagination() {
   }
 };
 
-
-
-
 function renderOneItem(person) {
   const li = document.createElement('li');
   li.innerHTML = `<div class="personCard">${person.name} </div>`;
@@ -141,29 +139,34 @@ function renderOneFullItem(item) {
   for (let i = 0; i < item.starships.length; i++) {
     getShips(item.starships[i])
   }
+  for (let i = 0; i < item.vehicles.length; i++) {
+    getVehicles(item.vehicles[i])
+  }
+  for (let i = 0; i < item.species.length; i++) {
+    getSpecies(item.species[i])
+  }
+  getPlanets(item.homeworld)
   const li = document.createElement('li');
   li.innerHTML = `
 <h3>${item.name}</h3>
 <div>
-    <p>Height: ${item.height}</p>
     <p>Hair Color: ${item.hair_color}</p>
     <p>Eye Color: ${item.eye_color}</p>
-    <p>Eye Color: ${item.skin_color}</p>
+    <p>Skin Color: ${item.skin_color}</p>
     <p>Gender: ${item.gender}</p>
     <p>Birth year: ${item.birth_year}</p>
-    <p>Gender: ${item.gender}</p>
     <p>Height: ${item.height}</p>
     <p>Mass: ${item.mass}</p>
     <h3>Films</h3>
-    <div id="films"> </div>
-    <h3>Species</h3>
-    <div id="species"></div>
+    <div id="films"> </div> 
+    <h3>Planets</h3>
+    <div id="planets"></div>  
     <h3>Star ships</h3>
     <div id="starships"></div>
     <h3>Vehicles</h3>
-    <div id="vehicles"></div>
-    <h3>Locations</h3>
-    <div id="planets"></div>
+    <div id="vehicles"></div>   
+    <h3>Species</h3>
+    <div id="species"></div>
 </div>`;
 
   return li;
@@ -173,26 +176,60 @@ function getFilms(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      localStorage.setItem('movies', JSON.stringify(data));
-      const movie = JSON.parse(localStorage.getItem('movies'));
-      films.push(movie);
-      const parent = document.getElementById('films');
-      parent.appendChild(renderMovie(movie));
+      getListData('films', films, data);     
     })
 }
 function getShips(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      localStorage.setItem('starships', JSON.stringify(data));
-      const ship = JSON.parse(localStorage.getItem('starships'));
-      starships.push(ship);
-      const parent = document.getElementById('starships');
-      parent.appendChild(renderShip(ship));
+      getListData('starships', starships, data);      
+    })
+}
+function getVehicles(url) {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      getListData('vehicles', vehicles, data);      
+    })
+}
+function getPlanets(url) {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      getListData('planets', planets, data);      
+    })
+}
+function getSpecies(url) {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      getListData('species', species, data);      
     })
 }
 
-
+function getListData(key,list,data){
+  localStorage.setItem(key, JSON.stringify(data));
+  const item = JSON.parse(localStorage.getItem(key));
+  list.push(item);
+  const parent = document.getElementById(key);
+  if(key == 'films'){
+    parent.appendChild(renderMovie(item));
+  }  
+  if(key == 'starships'){
+    parent.appendChild(renderShip(item));
+  }  
+  if(key == 'vehicles'){
+    parent.appendChild(renderVehicle(item));
+  }
+  if(key == 'planets'){
+    parent.appendChild(renderPlanet(item));
+  }
+  if(key == 'species'){
+    parent.appendChild(renderSpecies(item));
+  }
+  
+}
 
 
 
@@ -220,6 +257,53 @@ function renderShip(ship) {
 <p> Cargo Capacity: ${ship.cargo_capacity}</p>
 <p> Consumables: ${ship.consumables}</p>
 <p> Passengers: ${ship.passengers}</p>
+</div> 
+`
+  return li;
+}
+function renderVehicle(vehicle) {
+  const li = document.createElement('li');
+  li.innerHTML = `
+<div class="card"> 
+<h4>${vehicle.name} - ${vehicle.vehicle_class}</h4>
+<p> Model: ${vehicle.model}</p>
+<p> Manufacturer: ${vehicle.manufacturer}</p>
+<p> Cargo Capacity: ${vehicle.cargo_capacity}</p>
+<p> Consumables: ${vehicle.consumables}</p>
+<p> Passengers: ${vehicle.passengers}</p>
+</div> 
+`
+  return li;
+}
+function renderPlanet(planet) {
+  const li = document.createElement('li');
+  li.innerHTML = `
+<div class="card"> 
+<h4>${planet.name} </h4>
+<p> Climate: ${planet.climate}</p>
+<p> Gravity: ${planet.gravity}</p>
+<p> Diameter: ${planet.diameter}</p>
+<p> Population: ${planet.population}</p>
+<p> Orbital Period: ${planet.orbital_period}</p>
+<p> Rotation Period: ${planet.rotation_period}</p>
+<p> Terrain: ${planet.terrain}</p>
+</div> 
+`
+  return li;
+}
+function renderSpecies(species) {
+  const li = document.createElement('li');
+  li.innerHTML = `
+<div class="card"> 
+<h4>${species.name}</h4>
+<p>Classification: ${species.classification}</p>
+<p>Eye Colors: ${species.eye_colors}</p>
+<p>Hair Color: ${species.hair_colors}</p>
+<p>Skin Color: ${species.skin_colors}</p>
+<p>Language: ${species.language}</p>
+<p>Average Height: ${species.average_height}</p>
+<p>Average Lifespan: ${species.average_lifespan}</p>
+
 </div> 
 `
   return li;

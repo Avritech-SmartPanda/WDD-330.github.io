@@ -78,7 +78,7 @@ h1 {
     text-shadow: 1px 1px 3px #000;
 }
 
-#films,#vehicles {
+#films {
     display: flex;
     justify-content: space-between;
 }
@@ -88,7 +88,7 @@ h1 {
 #starships,#vehicles{
     display: flex;
 }
-#starships .card{
+#starships .card,#vehicles .card{
     width: 250px;
     height: 250px;
 }
