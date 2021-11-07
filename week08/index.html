@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body onload="getDates()">
+    <div id="top"></div>
+ 
+    <header class="banner">  <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2> WDD 330 / 08</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li  class="active"><a href="./index.html">Notes</a></li>
+                <li><a href="./team-activity/index.html">Team Activity</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="page">
+
+        
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Ch8: Transforms and Transitions</li>
+                        <li>Ch12: Canvas, SVG, and Drag and Drop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <p>
+                    CSS transitions allow you to animate something that may typically happen immediately.
+                    You can customize how it is animated and for how long. For example, if you want a button to change color when you hover over it, you can.
+                    Below is the code to do that.
+                </p><br>
+
+                <pre><code >button { 
+       width: 80px; 
+       height: 80px; 
+       color: green; 
+       transition: color 2s; 
+} 
+            
+button:hover { 
+   color: orange;
+}</code></pre><br>
+                 
+
+                <p>
+                    We first target the button in order to style it and give it a green color.
+                    When we target it again but use the <i>:hover</i>, it makes it transition to orange
+                    when the user hovers over it. The transition also has a clarification of 2s
+                    so that the transition happens over a span of 2 seconds.
+                </p>
+                <br>
+                <p>
+                    <ul >
+                        <li>
+                            Transform lets you do the following to any element on the page:
+                            <ul>
+                                <li><div id="translate">translate</div></li>
+                                <li><div id="rotate">rotate</div></li>
+                                <li><div id="scale">scale</div></li>
+                                <li><div id="skew">skew</div></li>
+                            </ul>
+                        </li>
+                        <li>transform-origin changes the center point of the transformation</li>
+                        <li>transformations will be done in the order you put them</li>
+                        <li>Canvas - use canvas tags to say not supported which will only appear if it doesn't work</li>
+                        <li>Draw paths for unique shapes</li>
+                        <li>Drawings can be saved</li>
+                        <li>Convert to black and white</li>
+                        <li>Drag and Drop doesn't work the same on mobile</li>
+            
+                    </ul>
+                  
+                </p>
+
+            </div>
+        </div>
+
+ 
+
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Fall | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../js/main.js"></script>
+  
+</body>
+
+</html>

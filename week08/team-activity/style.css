@@ -1,0 +1,149 @@
+main {
+    max-width: 84%;
+    margin: 80px auto;
+    border-radius: 8px;
+    padding: 24px;
+    background: #000;
+    background:radial-gradient(#050526 40%,black 98%) ;
+    color: #fff;
+}
+
+main h2 {
+    background: #58afef;
+    
+    border-radius: 4px;
+    padding: 10px 0 10px 10px;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+
+}
+ input[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width:40%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 12px;
+    color: #555;
+    border-radius: 4px;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+
+
+
+button {
+    width:125px;
+    padding: 12px;
+    background: #f2f200;
+    border: none;
+    border-radius: 4px;
+    color: #000;
+}
+
+
+button:hover {
+    background: #3c4252;
+    border: none;
+}
+div#result {
+    font-size: 32px;
+}
+
+.paginator{
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style-type: none;
+}
+
+div.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+ul#starwars li{
+   border-bottom:#ccc 1px dashed;
+   padding: 12px 0;
+}
+
+h1 {
+    font-family: 'Star Jedi', arial;
+    font-size: 38px;
+    color: #f2f200;
+    text-align:center;
+    text-shadow: 1px 1px 3px #000;
+    
+}
+
+
+#films{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.filmCard{
+    margin: 5px;
+    padding: 1em;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+.personCard{
+    margin: 0 5px;
+    padding: 1em;
+    border: 1px dashed white;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+h3 {
+    border-bottom: 2px solid #f2f200;
+    border-top: 2px solid #f2f200;
+    padding: 10px 0 10px 0;
+    font-size: 140%;
+    text-align: left;
+    color: #f2f200;
+    text-transform: uppercase;
+}
+
+.paginator {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    padding: 1rem;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    /* color: black; */
+    /* float: left; */
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ccc;}

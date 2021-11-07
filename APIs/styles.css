@@ -1,0 +1,79 @@
+body {
+  background-color: black;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  margin: auto;
+  max-width: 960px;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Metamorphous", serif;
+}
+
+h2 {
+  border-bottom: 1px solid white;
+}
+
+a {
+  color: white;
+}
+
+.people,
+footer {
+  border: 0.2em solid turquoise;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin-top: 0.5em;
+}
+
+.personCard {
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 2px solid white;
+  border-radius: 0.3em;
+}
+
+button {
+  background-color: lightskyblue;
+  border: 2px solid turquoise;
+  border-radius: 0.3em;
+  margin: 0.75em;
+  padding: 0.5em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button:hover {
+  padding: 0.75em 2em;
+  background-color: white;
+}
+
+button:hover:disabled {
+  padding: 0.5em;
+  background-color: lightskyblue;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  padding: 1rem;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#pages {
+  margin: auto;
+}
