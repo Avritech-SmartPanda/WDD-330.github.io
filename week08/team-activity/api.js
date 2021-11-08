@@ -27,6 +27,7 @@ export default class CharactersList {
 
   getData(data) {
     localStorage.setItem(this.key, JSON.stringify(data));
+    this.list = [];
     data.results.forEach(el => {
       this.list.push(el);
     });
