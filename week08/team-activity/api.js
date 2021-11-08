@@ -27,11 +27,11 @@ export default class CharactersList {
 
   getData(data) {
     localStorage.setItem(this.key, JSON.stringify(data));
+    this.list = [];
     data.results.forEach(el => {
       this.list.push(el);
     });
     this.routeToPage(data);
-    console.log(data);
     this.showList();
   }
 
@@ -67,8 +67,7 @@ export default class CharactersList {
     pages.forEach(el => {
       el.addEventListener('click', () => {
         this.page = el.id;
-        document.querySelectorAll('.active').forEach(e => e.classList.remove('active'));
-        document.getElementById(el.id).classList.add('active');
+        this.addActiveClass();
         this.fetchData();
       });
     })
@@ -89,7 +88,7 @@ export default class CharactersList {
     } else {
       this.nextButton.classList.remove('hide');
       this.nextButton.onclick = () => this.getNext();
-      
+
     }
   }
 
@@ -104,17 +103,25 @@ export default class CharactersList {
 
   // Getting the previous page's results
   getPrevious() {
-    this.page = this.page - 1;
+    this.page = Number(this.page) - 1;
+    this.addActiveClass();
     this.fetchData();
   }
 
   // Getting the next page's results
   getNext() {
-    this.page = this.page + 1;
+    this.page = Number(this.page) + 1;
+    this.addActiveClass();
     this.fetchData();
   }
-}
 
+  addActiveClass(){
+    let paginator = document.getElementById("pagination");
+    const pages = Array.from(paginator.children);
+    document.querySelectorAll('.active').forEach(e => e.classList.remove('active'));
+    pages.find(el => el.id === this.page.toString()).classList.add('active');
+  }
+}
 
 function buildPagination() {
   let paginator = document.getElementById("pagination");
@@ -176,59 +183,59 @@ function getFilms(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      getListData('films', films, data);     
+      getListData('films', films, data);
     })
 }
 function getShips(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      getListData('starships', starships, data);      
+      getListData('starships', starships, data);
     })
 }
 function getVehicles(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      getListData('vehicles', vehicles, data);      
+      getListData('vehicles', vehicles, data);
     })
 }
 function getPlanets(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      getListData('planets', planets, data);      
+      getListData('planets', planets, data);
     })
 }
 function getSpecies(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      getListData('species', species, data);      
+      getListData('species', species, data);
     })
 }
 
-function getListData(key,list,data){
+function getListData(key, list, data) {
   localStorage.setItem(key, JSON.stringify(data));
   const item = JSON.parse(localStorage.getItem(key));
   list.push(item);
   const parent = document.getElementById(key);
-  if(key == 'films'){
+  if (key == 'films') {
     parent.appendChild(renderMovie(item));
-  }  
-  if(key == 'starships'){
+  }
+  if (key == 'starships') {
     parent.appendChild(renderShip(item));
-  }  
-  if(key == 'vehicles'){
+  }
+  if (key == 'vehicles') {
     parent.appendChild(renderVehicle(item));
   }
-  if(key == 'planets'){
+  if (key == 'planets') {
     parent.appendChild(renderPlanet(item));
   }
-  if(key == 'species'){
+  if (key == 'species') {
     parent.appendChild(renderSpecies(item));
   }
-  
+
 }
 
 
