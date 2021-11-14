@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body onload="getDates()">
+    <div id="top"></div>
+
+  
+    <header class="banner">
+        <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2> WDD 330 / 09</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="./team-activity/index.html">Team Activity</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <div class="page">
+
+
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Javascript: Novice to Ninja (Sitepoint) book.</li>
+                        <li>Ch9: The Window Object.</li>
+                        <li>Ch14: HTML5 APIs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">The Window Object</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+
+                <div class="content">
+                    <p>
+                        Supported by all browsers and represents the browser's window. Global Javascript
+                        functions, variables
+                        and objects automatically become members of the window object. There are also window object
+                        methods.
+                    </p>
+
+                    <ul>
+                        <li>
+                            One that is commonly used is the alert() method. It displays an alert box with a message and
+                            an ok
+                            button.<em>
+                                Click <a onclick="sendAlert()" style="color: dodgerblue;cursor: pointer;">here</a> to
+                                see an example.
+                            </em>
+                        </li>
+                    </ul>
+                    <br>
+
+
+                    <pre><code >function sendAlert() { 
+   alert("This is an alert() method!"); 
+}</code></pre><br>
+
+                    <ul>
+                        <li> Another method is the scrollTo() method. This allows you to have the page take you to a
+                            specified destination on the window.<em> Click <a onclick="scrollBottom()"
+                                    style="color: dodgerblue;cursor: pointer;">here</a> to try the
+                                scrollTo() method. Here are two functions to make the scrollTo() methods work: </em>
+                        </li>
+                    </ul>
+                    <br>
+
+                    <pre>
+                        <code >function scrollBottom() { 
+   window.scrollTo(0,5000); 
+}</code>
+                        <code >function scrollBack() {
+  window.scrollTo(0,50); 
+}</code>
+                    </pre>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Timing functions</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <p>Alert message will appear in 2 seconds</p>
+                <pre>
+                    <code >window.setTimeout( () => alert("Timing functions practise!"), 2000);</code>
+                </pre>
+
+            </div>
+        </div>
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Animation Example</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div id='square'></div>
+
+                <p>Animation with requestAnimationFrame.</p>
+                <pre>
+                    <code >const squareElement = document.getElementById('square');
+let angle = 0;
+function rotate() {
+   angle = (angle + 2)%360;
+   squareElement.style.transform = `rotate(${angle}deg)`
+   window.requestAnimationFrame(rotate);
+}
+const id = requestAnimationFrame(rotate);</code>
+                </pre>
+                <p>The same animation ca be achieved merely by css in the styles.css file using css animation property
+                    and @keyframes.</p>
+                <pre>
+                    <code >@keyframes spin { 
+   from { transform:rotate(0deg); } 
+    to { transform:rotate(360deg); } 
+ }</code>
+                </pre>
+
+            </div>
+        </div>
+
+
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Canvas practise</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <canvas id='canvas' width='800' height='360'>Sorry, but your browser does not support the canvas
+                    element</canvas>
+                <pre>
+                    <code > const canvasElement = document.getElementById('canvas');
+
+const context = canvasElement.getContext('2d');
+context.fillStyle = "#0c0"; <span class="comment">// a green fill color</span>
+                        
+context.strokeStyle = "#ccc"; <span class="comment">// a gray stroke color</span>
+context.lineWidth = 4;
+<span class="comment">//  drawing a filled-in rectangle</span>
+context.fillRect(10,10,200,100);
+<span class="comment">// drawing a rectangle that is not filled in</span>
+context.strokeRect(10,200,150,70);
+                        
+                        
+<span class="comment">/* draw a thick black T shape onto the canvas by moving to the
+coordinates (130,50), then drawing a horizontal line 30 pixels long, and finally
+moving to the middle of that line and drawing a vertical line 40 pixels long*/</span>
+context.beginPath();
+context.moveTo(130, 50);
+context.lineTo(180, 50);
+context.moveTo(155, 50);
+context.lineTo(155, 90);
+context.strokeStyle = '#000';
+context.lineWidth = 15;
+context.stroke();
+
+
+<span class="comment">//  drawing a red circle of radius 40 pixels at center (300,300)</span>
+context.beginPath();
+context.arc(300, 300, 40, 0, Math.PI * 2, false);
+context.strokeStyle = '#f00';
+context.lineWidth = 4;
+context.stroke();
+
+<span class="comment">//  draw the text “Hello from Canvas” in blue at coordinates (20,300)</span>
+context.fillStyle = '#00c'; <span class="comment">// a blue fill color</span>
+context.font = 'bold 26px sans-serif';
+context.fillText('Hello I am from Canvas', 20, 300);</code>
+                </pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Geolocation practise</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div id='geo'></div>
+                <pre>
+                    <code>navigator.geolocation.getCurrentPosition(youAreHere);
+
+function youAreHere(position) {
+   console.log(`Latitude: ${position.coords.latitude},
+   Longitude: ${position.coords.longitude}`);
+   document.getElementById('geo').innerHTML = `Latitude: ${position.coords.latitude},
+   Longitude: ${position.coords.longitude}`;
+}</code></pre>
+
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Web-workers practise</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <!-- <button id='rainbow'>Change Color</button> -->
+                    <form>
+                        <label for='number'>Enter a Number to Factorize:</label>
+                        <input id='number' type='number' name='number' min=1 value='20'>
+                        <button type='submit'>Submit</button>
+                    </form>
+                    <div id='result'></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content ">
+            <div class="content__wrapper">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Websockets practise</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <form>
+                        <label for='message'>Enter a Message:</label>
+                        <input type='text' name='message'>
+                        <button type='submit'>Submit</button>
+                    </form>
+                    <div id='output'></div>
+                </div> 
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="./canvas.js"></script>
+    <script src="./geolocation.js"></script>
+    <script src="./websocket.js"></script>
+    <script src="./factors.js"></script>
+    <script src="./web-workers.js"></script>
+    <script>
+        function sendAlert() {
+            alert("This is an alert() method!");
+        }
+
+        function scrollBottom() {
+            window.scrollTo(0, 5000);
+        }
+
+        function scrollBack() {
+            window.scrollTo(0, 50);
+        }
+
+
+        const squareElement = document.getElementById('square');
+        let angle = 0;
+        function rotate() {
+            angle = (angle + 2) % 360;
+            squareElement.style.transform = `rotate(${angle}deg)`
+            window.requestAnimationFrame(rotate);
+        }
+        const id = requestAnimationFrame(rotate);
+    </script>
+</body>
+
+</html>

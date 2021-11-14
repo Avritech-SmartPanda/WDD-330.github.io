@@ -88,7 +88,6 @@ export default class CharactersList {
     } else {
       this.nextButton.classList.remove('hide');
       this.nextButton.onclick = () => this.getNext();
-
     }
   }
 
