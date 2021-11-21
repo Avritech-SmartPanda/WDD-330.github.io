@@ -1,0 +1,18 @@
+h1 {
+    color: rgb(0 176 255);
+    text-align: center;
+}
+
+#quakeList {
+    padding: 10px;
+    margin: 0 auto;
+    list-style-type: none;
+    width: fit-content;
+    border-radius: 12px;
+    background: rgb(0 176 255);
+    color: #fff;
+}
+
+#quakeList li {
+    padding: .75rem 1.5rem;
+}

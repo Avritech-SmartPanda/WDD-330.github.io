@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 | Daphne Avril | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body onload="getDates()">
+    <div id="top"></div>
+
+  
+    <header class="banner">
+        <h2 class="center-heading">WDD 330 - Portfolio</h2>
+        <div>
+            <h2> WDD 330 / 10</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="active"><a href="#">Notes</a></li>
+                <li><a href="./team-activity/index.html">Team Activity</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="page">
+
+        <div class="content ">
+            <div class="content__wrapper content__wrapper--first">
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Readings</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+                <div>
+                    <ul>
+                        <li>MDN: Validating forms.</li>
+                        <li>MDN: Using Fetch.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="content__wrapper">
+
+                <div class="heading-rule">
+                    <div class="heading-rule-before"></div>
+                    <div class="heading">Validating forms and Using Fetch</div>
+                    <div class="heading-rule-after"></div>
+                </div>
+
+                <div>
+                    <h4>Client-side form validation</h4>
+
+
+                    <p>
+                        When you enter data, the browser and/or the web server will check to see that the data is in the correct
+                        format and within the constraints set by the application. Validation done in the browser is
+                        called client-side validation, while validation done on the server is called server-side validation.
+                        <br>
+                        We want to make filling out web forms as easy as possible. So why do we insist on validating our forms?
+                        There are three main reasons:
+                    </p>
+
+                    <ul>
+                        <li><b>System error</b> ― there’s a problem with the system or external devices with which the
+                            program is interacting. </li>
+                        <li><b>Programmer error</b> ― the program contains incorrect syntax or faulty
+                            logic; it could even be as simple as a typo. </li>
+                        <li><b>User error</b> ― the user has entered data incorrectly,
+                            which the program is unable to handle.</li>
+                    </ul>
+
+                    <ul>
+                        <li><b>We want to get the right data, in the right format.</b> Our applications won't work properly if
+                            our
+                            users' data is
+                            stored in the wrong format, is incorrect, or is omitted altogether.</li>
+                        <li><b>We want to protect our users' data.</b> Forcing our users to enter secure passwords makes it
+                            easier to
+                            protect
+                            their
+                            account information.</li>
+                        <li><b>We want to protect ourselves.</b> There are many ways that malicious users can misuse unprotected
+                            forms to
+                            damage
+                            the application.</li>
+                    </ul>
+                    <p>HTML5 form controls include the following:</p>
+                    <ul>
+                        <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.
+                        </li>
+                        <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
+                        <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+                        <li>type: Specifies whether the data needs to be a number, an email address, or some other specific
+                            preset type. 
+                        </li>
+                        <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.
+                        </li>
+                    </ul>
+                    <p>When an element is valid, the following things are true:</p>
+                    <ul>
+                        <li>The element matches the :valid CSS pseudo-class, which lets you apply a specific style to valid
+                            elements.</li>
+                        <li>If the user tries to send the data, the browser will submit the form, provided there is nothing else
+                            stopping it
+                            from doing so (e.g., JavaScript).</li>
+                    </ul>
+                    <p>When an element is invalid, the following things are true:</p>
+                    <ul>
+                        <li>The element matches the :invalid CSS pseudo-class, and sometimes other UI pseudo-classes
+                            (e.g., :out-of-range)
+                            depending on the error, which lets you apply a specific style to invalid elements.</li>
+                        <li>If the user tries to send the data, the browser will block the form and display an error message.
+                        </li>
+                    </ul>
+        
+        
+                    <h3>The Constraint Validation API</h3>
+                    <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties
+                        available on
+                        the following form element DOM interfaces:</p>
+                    <ul>
+                        <li>HTMLButtonElement (represents a 'button' element)</li>
+                        <li>HTMLFieldSetElement (represents a 'fieldset' element)</li>
+                        <li>HTMLInputElement (represents an 'input' element)</li>
+                        <li>HTMLOutputElement (represents an 'output' element)</li>
+                        <li>HTMLSelectElement (represents a 'select' element)</li>
+                        <li>HTMLTextAreaElement (represents a 'textarea' element)</li>
+                    </ul>
+        
+                    <p>The Constraint validation API makes the following properties available on the above elements.</p>
+                    <ul>
+                        <li><b>validationMessage:</b> Returns a localized message describing the validation constraints that the
+                            control doesn't
+                            satisfy (if any). If the control is not a candidate for constraint validation
+                            (willValidate is false) or the
+                            element's value satisfies its constraints (is valid), this will return an empty string.</li>
+                        <li><b>validity:</b> Returns a ValidityState object that contains several properties describing the
+                            validity
+                            state of the
+                            element. You can find full details of all the available properties in the ValidityState reference
+                            page; below is
+                            listed a few of the more common ones:
+                            <ul>
+                                <li><b>patternMismatch:</b> Returns true if the value does not match the specified pattern,
+                                    and false if it does
+                                    match. If true, the element matches the :invalid CSS pseudo-class.</li>
+                                <li><b>tooLong:</b> Returns true if the value is longer than the maximum length specified by
+                                    the maxlength attribute, or false if it is shorter than or equal to the maximum. If true,
+                                    the element
+                                    matches the :invalid CSS pseudo-class.</li>
+                                <li><b>tooShort:</b> Returns true if the value is shorter than the minimum length specified by
+                                    the minlength attribute, or false if it is greater than or equal to the minimum. If true,
+                                    the element
+                                    matches the :invalid CSS pseudo-class.</li>
+                                <li><b>rangeOverflow:</b> Returns true if the value is greater than the maximum specified by
+                                    the max attribute,
+                                    or false if it is less than or equal to the maximum. If true, the element matches
+                                    the :invalid and :out-of-range CSS pseudo-classes.</li>
+                                <li><b>rangeUnderflow:</b> Returns true if the value is less than the minimum specified by
+                                    the min attribute,
+                                    or false if it is greater than or equal to the minimum. If true, the element matches
+                                    the :invalid and :out-of-range CSS pseudo-classes.</li>
+                                <li><b>typeMismatch:</b> Returns true if the value is not in the required syntax
+                                    (when type is email or url),
+                                    or false if the syntax is correct. If true, the element matches the :invalid CSS
+                                    pseudo-class.</li>
+                                <li><b>valid:</b> Returns true if the element meets all its validation constraints, and is
+                                    therefore
+                                    considered to
+                                    be valid, or false if it fails any constraint. If true, the element matches the :valid CSS
+                                    pseudo-class;
+                                    the :invalid CSS pseudo-class otherwise.</li>
+                                <li><b>valueMissing:</b> Returns true if the element has a required attribute, but no value,
+                                    or false otherwise. If
+                                    true, the element matches the :invalid CSS pseudo-class.</li>
+                            </ul>
+                        </li>
+                        <li><b>willValidate:</b> Returns true if the element will be validated when the form is
+                            submitted; false otherwise.</li>
+                    </ul>
+        
+                    <p>The Constraint Validation API also makes the following methods available on the above elements.</p>
+                    <ul>
+                        <li><b>checkValidity():</b> Returns true if the element's value has no validity
+                            problems; false otherwise. If
+                            the
+                            element is invalid, this method also fires an invalid event on the element.</li>
+                        <li><b>setCustomValidity(message):</b> Adds a custom error message to the element; if you set a custom
+                            error message, the element is considered to be invalid, and the specified error is displayed. This
+                            lets you use JavaScript code to establish a validation failure other than those offered by the
+                            standard HTML5 validation constraints. The message is shown to the user when reporting the problem.
+                        </li>
+                    </ul>
+        
+                    <h3>Using Fetch</h3>
+                    <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline,
+                        such as
+                        requests and responses. It also provides a global fetch() method that provides an easy, logical way to
+                        fetch
+                        resources asynchronously across the network.</p>
+        
+                    <h3>Uploading JSON data</h3>
+                    <p>Use fetch() to POST JSON-encoded data. </p>
+                    <pre class="code-snipet"> <code>const data = { username: 'example' }; 
+fetch('https://example.com/profile', { 
+    method: 'POST', // or 'PUT' 
+    headers: { 
+    'Content-Type': 'application/json', 
+    }, 
+    body: JSON.stringify(data) , // Notice how data is being sent 
+    }) 
+    .then(response => response.json()) 
+    .then(data => { 
+    console.log('Success:', data); 
+    }) 
+    .catch((error) => { 
+    console.error('Error:', error); 
+}); 
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        &copy; <span id="currentYear"></span> Spring | WDD 330 Portfolio | Daphne Avril | <span id="updateDate"></span>
+    </footer>
+    <script src="../js/main.js"></script>   
+</body>
+
+</html>
